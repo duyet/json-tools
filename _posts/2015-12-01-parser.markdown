@@ -52,6 +52,11 @@ var jsonEditorOptions = {
 	}
 };
 
+var jsonVoewOptions = {
+	mode: 'view',
+	modes: [ 'tree', 'view', 'form', 'code', 'text' ]
+};
+
 var jsoneditorContainer = document.getElementById("jsoneditor");
 var jsonviewContainer = document.getElementById("jsonview");
 
@@ -66,6 +71,6 @@ var json = {
 };
 
 var jsoneditor = new JSONEditor(jsoneditorContainer, jsonEditorOptions, json);
-var jsonview = new JSONEditor(jsonviewContainer, {mode: 'view'});
+var jsonview = new JSONEditor(jsonviewContainer, jsonVoewOptions, json);
 
 </script>

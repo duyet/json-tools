@@ -6,8 +6,8 @@
 </description>
     <link>http://json.jslab.xyz/</link>
     <atom:link href="http://json.jslab.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 02 Dec 2015 12:08:41 +0700</pubDate>
-    <lastBuildDate>Wed, 02 Dec 2015 12:08:41 +0700</lastBuildDate>
+    <pubDate>Wed, 02 Dec 2015 12:13:15 +0700</pubDate>
+    <lastBuildDate>Wed, 02 Dec 2015 12:13:15 +0700</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -60,6 +60,11 @@ var jsonEditorOptions = {
 	}
 };
 
+var jsonVoewOptions = {
+	mode: &#39;view&#39;,
+	modes: [ &#39;tree&#39;, &#39;view&#39;, &#39;form&#39;, &#39;code&#39;, &#39;text&#39; ]
+};
+
 var jsoneditorContainer = document.getElementById(&quot;jsoneditor&quot;);
 var jsonviewContainer = document.getElementById(&quot;jsonview&quot;);
 
@@ -74,7 +79,7 @@ var json = {
 };
 
 var jsoneditor = new JSONEditor(jsoneditorContainer, jsonEditorOptions, json);
-var jsonview = new JSONEditor(jsonviewContainer, {mode: &#39;view&#39;});
+var jsonview = new JSONEditor(jsonviewContainer, jsonVoewOptions, json);
 
 &lt;/script&gt;
 
