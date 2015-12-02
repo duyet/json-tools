@@ -1,0 +1,71 @@
+---
+layout: page
+title:  "JSON Parser"
+categories: tools
+---
+
+<link rel="stylesheet" type="text/css" href="/css/jsoneditor.min.css">
+
+<table border="0" style="width:100%">
+	<tr>
+		<td colspan="2">
+			<div id="errorMessage" style="font-weight: 700; color: #fdfdfd; border: 1px solid #D14; padding: 10px; margin-bottom: 5px;background: #D14; display:none"></div>
+		</td>
+	</tr>
+	<tr>
+		<td width="50%"><div id="jsoneditor" style="width: 100%; height: 550px;"></div></td>
+		<td width="50%"><div id="jsonview" style="width: 100%; height: 550px;"></div></td>
+	</tr>
+</table>
+
+<script type="text/javascript" src="/js/jsoneditor.js"></script>
+
+<script>
+var error = {
+	show: function(mess) {
+		document.getElementById('errorMessage').innerHTML = mess;
+		document.getElementById('errorMessage').style.display = 'block';
+	},
+
+	hide: function() {
+		document.getElementById('errorMessage').innerHTML = '';
+		document.getElementById('errorMessage').style.display = 'none';
+	}
+}
+
+var jsonEditorOptions = {
+	mode: 'code',
+	error: function (err) {
+		error.show(err.toString());
+	}, 
+	change: function() {
+		error.hide();
+
+		if (jsoneditor) {
+			try {
+				jsonview.set(jsoneditor.get());
+			} catch (e) {
+				error.show(e)
+				console.log(e)
+			}
+		}
+	}
+};
+
+var jsoneditorContainer = document.getElementById("jsoneditor");
+var jsonviewContainer = document.getElementById("jsonview");
+
+// set json
+var json = {
+    "Array": [1, 2, 3],
+    "Boolean": true,
+    "Null": null,
+    "Number": 123,
+    "Object": {"a": "b", "c": 'd'},
+    "String": "Hello World"
+};
+
+var jsoneditor = new JSONEditor(jsoneditorContainer, jsonEditorOptions, json);
+var jsonview = new JSONEditor(jsonviewContainer, {mode: 'view'});
+
+</script>

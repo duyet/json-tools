@@ -1,0 +1,25 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: JSON Tools
+email: me@duyetdev.com
+description: > # this means to ignore newlines until "baseurl:"
+  JSON Tools
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://json.jslab.xyz" # the base hostname & protocol for your site
+twitter_username: duyetdev
+github_username:  duyetdev
+
+encoding: "utf-8"
+
+# Build settings
+markdown: kramdown
+
+# Outputting
+permalink:     none
+paginate_path: /page:num
