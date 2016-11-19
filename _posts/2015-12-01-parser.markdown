@@ -4,7 +4,7 @@ title:  "JSON Parser"
 categories: tools
 ---
 
-<link rel="stylesheet" type="text/css" href="/css/jsoneditor.min.css">
+<link rel="stylesheet" type="text/css" href="http://duyetdev.github.io/json-tools/css/jsoneditor.min.css">
 
 <table border="0" style="width:100%">
 	<tr>
@@ -18,7 +18,7 @@ categories: tools
 	</tr>
 </table>
 
-<script type="text/javascript" src="/js/jsoneditor.js"></script>
+<script type="text/javascript" src="http://duyetdev.github.io/json-tools/js/jsoneditor.js"></script>
 
 <script>
 var error = {
