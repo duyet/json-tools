@@ -1,0 +1,82 @@
+{
+  "name": "json-tools",
+  "version": "2.0.0",
+  "description": "A web-based JSON parser and editor tool built with Jekyll and JSONEditor",
+  "main": "index.html",
+  "scripts": {
+    "start": "bundle exec jekyll serve --livereload",
+    "build": "bundle exec jekyll build",
+    "clean": "bundle exec jekyll clean",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:md",
+    "lint:js": "eslint '**/*.js' --ignore-pattern 'node_modules/' --ignore-pattern '_site/' --ignore-pattern 'js/jsoneditor*.js'",
+    "lint:css": "stylelint '**/*.{css,scss}' --ignore-pattern 'node_modules/' --ignore-pattern '_site/' --ignore-pattern 'css/jsoneditor*.css'",
+    "lint:md": "markdownlint '**/*.md' '**/*.markdown' --ignore node_modules --ignore _site",
+    "format": "prettier --write '**/*.{js,css,scss,md,markdown,json,yml,yaml}' --ignore-path .gitignore",
+    "format:check": "prettier --check '**/*.{js,css,scss,md,markdown,json,yml,yaml}' --ignore-path .gitignore",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "update:jsoneditor": "npm install jsoneditor@latest && npm run copy:jsoneditor",
+    "copy:jsoneditor": "cp node_modules/jsoneditor/dist/jsoneditor.min.js js/ && cp node_modules/jsoneditor/dist/jsoneditor.js js/ && cp node_modules/jsoneditor/dist/jsoneditor.min.css css/ && cp node_modules/jsoneditor/dist/jsoneditor.css css/ && cp -r node_modules/jsoneditor/dist/img css/",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/duyetdev/json-tools.git"
+  },
+  "keywords": [
+    "json",
+    "parser",
+    "editor",
+    "validator",
+    "formatter",
+    "jekyll"
+  ],
+  "author": "duyetdev <me@duyetdev.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/duyetdev/json-tools/issues"
+  },
+  "homepage": "https://duyetdev.github.io/json-tools",
+  "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/preset-env": "^7.24.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jest": "^27.9.0",
+    "husky": "^9.0.11",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "lint-staged": "^15.2.2",
+    "markdownlint-cli": "^0.39.0",
+    "prettier": "^3.2.5",
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-config-standard-scss": "^13.0.0",
+    "stylelint-scss": "^6.2.0"
+  },
+  "dependencies": {
+    "jsoneditor": "^10.4.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,scss}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.{md,markdown}": [
+      "markdownlint --fix",
+      "prettier --write"
+    ],
+    "*.{json,yml,yaml}": [
+      "prettier --write"
+    ]
+  }
+}

@@ -1,0 +1,127 @@
+/**
+ * JSON Parser - Custom Styles
+ * Styles specific to the JSON parser/editor page
+ */
+
+/* Parser Layout */
+.parser-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+/* Error Message Styling */
+.error-message {
+  display: none;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #fdfdfd;
+  background-color: #d14;
+  border: 0.0625rem solid #d14;
+  border-radius: 0.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.error-message.visible {
+  display: block;
+}
+
+.error-message::before {
+  content: "⚠ ";
+  margin-right: 0.5rem;
+}
+
+/* Editor Panes */
+.editor-panes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+  min-height: 34.375rem; /* 550px */
+}
+
+.editor-pane {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.editor-pane__label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.editor-pane__content {
+  flex: 1;
+  min-height: 34.375rem; /* 550px */
+  border: 0.0625rem solid #d3d3d3;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .editor-panes {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .editor-pane__content {
+    min-height: 25rem; /* 400px on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .error-message {
+    font-size: 0.875rem;
+    padding: 0.625rem 0.875rem;
+  }
+
+  .editor-pane__content {
+    min-height: 18.75rem; /* 300px on small mobile */
+  }
+
+  .editor-pane__label {
+    font-size: 0.8125rem;
+  }
+}
+
+/* Loading State */
+.editor-pane__content.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+}
+
+.editor-pane__content.loading::after {
+  content: "Loading editor...";
+  color: #999;
+  font-size: 0.875rem;
+}
+
+/* Focus States for Accessibility */
+.editor-pane__content:focus-within {
+  outline: 0.125rem solid #ff6200;
+  outline-offset: 0.125rem;
+}
+
+/* Print Styles */
+@media print {
+  .editor-panes {
+    grid-template-columns: 1fr;
+  }
+
+  .error-message {
+    display: none;
+  }
+}
