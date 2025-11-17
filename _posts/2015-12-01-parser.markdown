@@ -1,76 +1,35 @@
 ---
 layout: page
-title:  "JSON Parser"
+title: "JSON Parser"
 categories: tools
 ---
 
-<link rel="stylesheet" type="text/css" href="http://duyetdev.github.io/json-tools/css/jsoneditor.min.css">
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/jsoneditor.min.css">
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/parser.css">
 
-<table border="0" style="width:100%">
-	<tr>
-		<td colspan="2">
-			<div id="errorMessage" style="font-weight: 700; color: #fdfdfd; border: 1px solid #D14; padding: 10px; margin-bottom: 5px;background: #D14; display:none"></div>
-		</td>
-	</tr>
-	<tr>
-		<td width="50%"><div id="jsoneditor" style="width: 100%; height: 550px;"></div></td>
-		<td width="50%"><div id="jsonview" style="width: 100%; height: 550px;"></div></td>
-	</tr>
-</table>
+<div class="parser-container">
+  <!-- Error Message Display -->
+  <div id="errorMessage" class="error-message" aria-live="polite"></div>
 
-<script type="text/javascript" src="http://duyetdev.github.io/json-tools/js/jsoneditor.js"></script>
+  <!-- Editor Panes -->
+  <div class="editor-panes">
+    <!-- Left Pane: Code Editor -->
+    <div class="editor-pane">
+      <label class="editor-pane__label" for="jsoneditor">
+        JSON Editor
+      </label>
+      <div id="jsoneditor" class="editor-pane__content" role="application" aria-label="JSON code editor"></div>
+    </div>
 
-<script>
-var error = {
-	show: function(mess) {
-		document.getElementById('errorMessage').innerHTML = mess;
-		document.getElementById('errorMessage').style.display = 'block';
-	},
+    <!-- Right Pane: View Editor -->
+    <div class="editor-pane">
+      <label class="editor-pane__label" for="jsonview">
+        JSON Viewer
+      </label>
+      <div id="jsonview" class="editor-pane__content" role="application" aria-label="JSON viewer"></div>
+    </div>
+  </div>
+</div>
 
-	hide: function() {
-		document.getElementById('errorMessage').innerHTML = '';
-		document.getElementById('errorMessage').style.display = 'none';
-	}
-}
-
-var jsonEditorOptions = {
-	mode: 'code',
-	error: function (err) {
-		error.show(err.toString());
-	}, 
-	change: function() {
-		error.hide();
-
-		if (jsoneditor) {
-			try {
-				jsonview.set(jsoneditor.get());
-			} catch (e) {
-				error.show(e)
-				console.log(e)
-			}
-		}
-	}
-};
-
-var jsonVoewOptions = {
-	mode: 'view',
-	modes: [ 'tree', 'view', 'form', 'code', 'text' ]
-};
-
-var jsoneditorContainer = document.getElementById("jsoneditor");
-var jsonviewContainer = document.getElementById("jsonview");
-
-// set json
-var json = {
-    "Array": [1, 2, 3],
-    "Boolean": true,
-    "Null": null,
-    "Number": 123,
-    "Object": {"a": "b", "c": 'd'},
-    "String": "Hello World"
-};
-
-var jsoneditor = new JSONEditor(jsoneditorContainer, jsonEditorOptions, json);
-var jsonview = new JSONEditor(jsonviewContainer, jsonVoewOptions, json);
-
-</script>
+<script type="text/javascript" src="{{ site.baseurl }}/js/jsoneditor.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/js/parser.js"></script>

@@ -7,13 +7,17 @@
 
 # Site settings
 title: JSON Tools
+author: duyetdev
 email: me@duyetdev.com
 description: > # this means to ignore newlines until "baseurl:"
-  JSON Tools
+  A beautiful, fast, and user-friendly web-based JSON parser and editor.
+  Parse, validate, format, and view JSON with multiple display modes.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://duyetdev.github.io/json-tools" # the base hostname & protocol for your site
+url: "https://duyetdev.github.io/json-tools" # the base hostname & protocol for your site
 twitter_username: duyetdev
 github_username:  duyetdev
+lang: en_US
+timezone: UTC
 
 encoding: "utf-8"
 
