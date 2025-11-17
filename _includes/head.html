@@ -49,6 +49,9 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}">
+  {% if page.url == '/' or page.url == '/index.html' %}
+  <link rel="stylesheet" href="{{ '/css/home.css' | prepend: site.baseurl }}">
+  {% endif %}
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">

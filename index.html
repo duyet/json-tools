@@ -3,15 +3,97 @@ layout: default
 ---
 
 <div class="home">
+  <section class="hero">
+    <h1 class="hero__title">JSON Tools</h1>
+    <p class="hero__subtitle">
+      A beautiful, fast, and user-friendly web-based JSON parser and editor.
+      Parse, validate, format, and view JSON with ease.
+    </p>
+    <div class="hero__actions">
+      <a href="{{ '/tools/parser.html' | prepend: site.baseurl }}" class="btn btn--primary">
+        Open JSON Parser
+      </a>
+      <a href="{{ '/about/' | prepend: site.baseurl }}" class="btn btn--secondary">
+        Learn More
+      </a>
+    </div>
+  </section>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-  
+  <section class="features">
+    <h2 class="features__title">Features</h2>
+    <div class="features__grid">
+      <div class="feature">
+        <div class="feature__icon">🚀</div>
+        <h3 class="feature__title">Lightning Fast</h3>
+        <p class="feature__description">
+          No installation, no registration. Just open and start editing your JSON instantly.
+        </p>
+      </div>
+
+      <div class="feature">
+        <div class="feature__icon">🔍</div>
+        <h3 class="feature__title">Real-Time Validation</h3>
+        <p class="feature__description">
+          Get instant feedback on JSON syntax errors with clear, helpful error messages.
+        </p>
+      </div>
+
+      <div class="feature">
+        <div class="feature__icon">🎨</div>
+        <h3 class="feature__title">Multiple Views</h3>
+        <p class="feature__description">
+          View your JSON as a tree, code, form, or text. Switch between modes effortlessly.
+        </p>
+      </div>
+
+      <div class="feature">
+        <div class="feature__icon">🔒</div>
+        <h3 class="feature__title">Privacy First</h3>
+        <p class="feature__description">
+          Everything runs in your browser. Your data never leaves your machine.
+        </p>
+      </div>
+
+      <div class="feature">
+        <div class="feature__icon">📱</div>
+        <h3 class="feature__title">Responsive Design</h3>
+        <p class="feature__description">
+          Works perfectly on desktop, tablet, and mobile devices. Edit JSON anywhere.
+        </p>
+      </div>
+
+      <div class="feature">
+        <div class="feature__icon">♿</div>
+        <h3 class="feature__title">Accessible</h3>
+        <p class="feature__description">
+          Built with accessibility in mind. Keyboard navigation and screen reader support.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="quick-start">
+    <h2 class="quick-start__title">Quick Start</h2>
+    <ol class="quick-start__list">
+      <li>Click "Open JSON Parser" above</li>
+      <li>Paste or type your JSON in the left editor</li>
+      <li>View the formatted result in the right panel</li>
+      <li>Switch between different view modes as needed</li>
+    </ol>
+  </section>
+
+  <section class="open-source">
+    <h2 class="open-source__title">Open Source</h2>
+    <p class="open-source__description">
+      JSON Tools is free and open source. Contributions are welcome!
+    </p>
+    <div class="open-source__actions">
+      <a href="https://github.com/duyetdev/json-tools" class="btn btn--outline" target="_blank" rel="noopener noreferrer">
+        View on GitHub
+      </a>
+      <a href="{{ '/about/' | prepend: site.baseurl }}" class="btn btn--outline">
+        Learn More
+      </a>
+    </div>
+  </section>
 </div>

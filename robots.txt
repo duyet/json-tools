@@ -1,0 +1,28 @@
+# robots.txt for JSON Tools
+# https://duyetdev.github.io/json-tools
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://duyetdev.github.io/json-tools/sitemap.xml
+
+# Disallow build artifacts and config files
+Disallow: /node_modules/
+Disallow: /_site/
+Disallow: /.git/
+Disallow: /.sass-cache/
+Disallow: /.jekyll-cache/
+
+# Allow common crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Crawl delay for well-behaved bots
+Crawl-delay: 1

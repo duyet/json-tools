@@ -1,0 +1,14 @@
+# Browsers that we support
+
+# Production browsers
+> 0.5%
+last 2 versions
+not dead
+not IE 11
+not op_mini all
+
+# Development browsers
+Firefox ESR
+Chrome >= 90
+Safari >= 13
+Edge >= 90
